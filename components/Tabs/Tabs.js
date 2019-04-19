@@ -21,17 +21,19 @@ class TabLink {
 
   select() {
     // Get all of the elements with the tabs-link class
-    const links = querySelectorAll('.tabs-link');
+    const links = this.element.querySelectorAll('.tabs-link');
 
     // Using a loop or the forEach method remove the 'tabs-link-selected' class from all of the links
-    Array.from(links).forEach();
+    Array.from(links).forEach( () => 
+      this.element.classList.remove('tabs-link-selected')
+    );
 
 
     // Add a class named "tabs-link-selected" to this link
-    this.element;
+    this.element.classList.add('tabs-link-selected');
 
     // Call the select method on the item associated with this link
-    link.select();
+    this.select(`${this.data}`);
   }
 }
 
@@ -46,9 +48,9 @@ class TabItem {
     const items = this.element.querySelectorAll('.tabs-item');
 
     // Remove the class "tabs-item-selected" from each element
-
+    this.element.classList.remove('tabs-item-selected');
     // Add a class named "tabs-item-selected" to this element
-    //this.element;
+    this.element.classList.add('tabs-item-selected');
   }
 }
 
